@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 import EntryLine from "./EntryLine";
 
-function EntriyLines({ entries, deleteEntry }) {
+function EntriyLines({ entries, deleteEntry, editEntry }) {
     return (
         <Container>
             {entries.map((entry) => (
@@ -10,6 +10,7 @@ function EntriyLines({ entries, deleteEntry }) {
                     key={entry.id}
                     {...entry}
                     deleteEntry={deleteEntry}
+                    editEntry={editEntry}
                 />
             ))}
         </Container>

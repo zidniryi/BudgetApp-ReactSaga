@@ -1,38 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { Checkbox, Form, Segment } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import ButtonSaveOrCancel from "./ButtonSaveOrCancel";
+import EntryForm from "./EntryForm";
 
-function NewEntryForm({ addEntry }) {
-    const [description, setDescription] = useState("");
-    const [value, setValue] = useState("");
-    const [isExpense, setIsExpense] = useState(false);
-
+function NewEntryForm({
+    addEntry,
+    description,
+    setDescription,
+    value,
+    setValue,
+    isExpense,
+    setIsExpense,
+}) {
     return (
         <Form unstackable>
-            <Form.Group>
-                <Form.Input
-                    label="Description"
-                    placeholder="Description"
-                    icon="tags"
-                    width="12"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                />
-                <Form.Input
-                    label="Value"
-                    placeholder="10.000$"
-                    icon="dollar"
-                    width="4"
-                    iconPosition="left"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                />
-            </Form.Group>
-            <Segment>
-                <Checkbox toggle label={"Is expense"} checked={isExpense} onChange={() => setIsExpense((oldState) => !oldState)} />
-            </Segment>
-            <ButtonSaveOrCancel addEntry={addEntry} description={description} value={value} isExpense={isExpense} />
+            <EntryForm
+                description={description}
+                setDescription={setDescription}
+                value={value}
+                setValue={setValue}
+                isExpense={isExpense}
+                setIsExpense={setIsExpense}
+            />
+            <ButtonSaveOrCancel
+                addEntry={addEntry}
+            />
         </Form>
     );
 }
