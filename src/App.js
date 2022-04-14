@@ -1,5 +1,6 @@
 import { Container } from "semantic-ui-react";
 import React, { useEffect, useState } from "react";
+import { useSelector } from 'react-redux';
 
 import "./App.css";
 import DisplayBalance from "./components/DisplayBalance";
@@ -11,16 +12,19 @@ import EntriyLines from "./components/EntriyLines";
 import ModalEdit from "./components/ModalEdit";
 
 function App() {
-  const [entries, setEntries] = useState(initialEntries);
+  // const [entries, setEntries] = useState(initialEntries);
   // new
   const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
   const [isExpense, setIsExpense] = useState(false);
+
   const [isOpen, setIsOpen] = useState(false);
   const [editEntryId, setEditEntryId] = useState(null);
   const [totalIncome, setTotalIncome] = useState(0)
   const [totalExpense, setTotalExpense] = useState(0)
   const [total, setTotal] = useState(0)
+  // Redux
+  const entries = useSelector(state => state.entries)
 
   useEffect(() => {
     if (!isOpen && editEntryId) {
@@ -29,11 +33,11 @@ function App() {
       newEntries[index].description = description;
       newEntries[index].value = value;
       newEntries[index].isExpense = isExpense;
-      setEntries(newEntries);
+      // setEntries(newEntries);
       resetEntry()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
-
 
   useEffect(() => {
     let totalIncomes = 0
@@ -50,11 +54,6 @@ function App() {
     setTotalIncome(totalIncomes)
     setTotal(total)
   }, [entries])
-
-  const deleteEntry = (id) => {
-    const result = entries.filter((entry) => entry.id !== id);
-    setEntries(result);
-  };
 
   const editEntry = (id) => {
     if (id) {
@@ -76,7 +75,7 @@ function App() {
       value,
       isExpense,
     });
-    setEntries(result);
+    // setEntries(result);
     resetEntry()
   };
 
@@ -94,7 +93,6 @@ function App() {
       <MainHeader type="h3" title={"History"} />
       <EntriyLines
         entries={entries}
-        deleteEntry={deleteEntry}
         editEntry={editEntry}
       />
       <MainHeader type="h3" title={"Add new Transactiion"} />
