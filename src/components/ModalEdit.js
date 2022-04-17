@@ -2,20 +2,19 @@ import React from "react";
 import { useDispatch } from 'react-redux';
 import { Button, Form, Modal } from "semantic-ui-react";
 import { closeModal } from '../actions/modal.action';
+import useEntry from '../hooks/useEntry';
 
 import EntryForm from './EntryForm';
 
 function ModalEdit({
   isOpen,
-  setIsOpen,
   description,
-  setDescription,
   value,
-  setValue,
   isExpense,
-  setIsExpense,
+  id
 }) {
   const dispatch = useDispatch()
+  const entryUpdate = useEntry(description, value, isExpense)
 
   return (
     <Modal open={isOpen}>
@@ -23,17 +22,17 @@ function ModalEdit({
       <Modal.Content>
         <Form unstackable>
           <EntryForm
-            description={description}
-            setDescription={setDescription}
-            value={value}
-            setValue={setValue}
-            isExpense={isExpense}
-            setIsExpense={setIsExpense}
+            description={entryUpdate.description}
+            setDescription={entryUpdate.setDescription}
+            value={entryUpdate.value}
+            setValue={entryUpdate.setValue}
+            isExpense={entryUpdate.isExpense}
+            setIsExpense={entryUpdate.setIsExpense}
           />
         </Form>
       </Modal.Content>
       <Modal.Actions>
-        <Button secondary onClick={() => dispatch(closeModal())}>Save</Button>
+        <Button secondary onClick={() => entryUpdate.updateEntry(id)}>Save</Button>
         <Button onClick={() => dispatch(closeModal())}>Close</Button>
       </Modal.Actions>
     </Modal>
