@@ -4,7 +4,7 @@ import createSagaMiddleware from 'redux-saga'
 
 import entriesReducer from '../reducers/entries.reducer';
 import modalReducer from '../reducers/modal.reducer';
-import { testSaga } from '../sagas/testSaga';
+import { initSagas } from '../sagas';
 
 const sagaMiddleware = createSagaMiddleware()
 const middlewares = [sagaMiddleware]
@@ -14,7 +14,8 @@ const configureStore = () => {
         entries: entriesReducer,
         modals: modalReducer,
     }), composeWithDevTools(applyMiddleware(...middlewares)));
-    sagaMiddleware.run(testSaga)
+    // Run all sagas
+    initSagas(sagaMiddleware)
     return store
 }
 
