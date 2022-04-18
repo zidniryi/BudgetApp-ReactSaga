@@ -1,6 +1,7 @@
 import { Container } from "semantic-ui-react";
 import React, { useEffect, useState } from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios'
 
 import "./App.css";
 import DisplayBalance from "./components/DisplayBalance";
@@ -10,6 +11,7 @@ import MainHeader from "./components/MainHeader";
 import NewEntryForm from "./components/NewEntryForm";
 import EntriyLines from "./components/EntriyLines";
 import ModalEdit from "./components/ModalEdit";
+import { getAllEntries } from './actions/entries.action';
 
 function App() {
 
@@ -20,12 +22,17 @@ function App() {
   // Redux
   const entries = useSelector(state => state.entries)
   const { isOpen, id } = useSelector(state => state.modals)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const index = entries.findIndex(entry => entry.id === id)
     setEntry(entries[index])
   }, [isOpen, id, entries])
 
+
+  useEffect(() => {
+    dispatch(getAllEntries())
+  }, [])
 
 
   useEffect(() => {
