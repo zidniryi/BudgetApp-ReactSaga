@@ -24,7 +24,7 @@ export const getAllEntries = () => ({
     type: types.GET_ENTRIES
 })
 
-export const populateEntrues = (payload) => ({
+export const populateEntries = (payload) => ({
     type: types.POPULATE_ENTRIES,
     payload
 })

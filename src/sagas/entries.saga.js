@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { call, fork, put, take } from 'redux-saga/effects';
 
-import types, { populateEntrues } from '../actions/entries.action';
+import types, { populateEntries } from '../actions/entries.action';
 
 export function* getAllEntries() {
     yield take(types.GET_ENTRIES)
     const { data } = yield call(axios, 'http://localhost:3011/entries')
     yield put(
-        populateEntrues(data))
+        populateEntries(data))
 }
 
 export function* getEntryDetails(id) {
