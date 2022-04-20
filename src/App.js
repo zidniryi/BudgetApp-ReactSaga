@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getAllEntries())
-  }, [])
+  }, [dispatch])
 
 
   useEffect(() => {
