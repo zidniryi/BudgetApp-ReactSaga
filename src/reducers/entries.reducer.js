@@ -8,7 +8,7 @@ function entriesReducer(state = initialEntries, action) {
         case types.ADD_ENTRY:
             newEntries = state.concat({ ...action.payload });
             return newEntries;
-        case types.REMOVE_ENTRY:
+        case types.REMOVE_ENTRY_RESULT:
             newEntries = state.filter(entry => entry.id !== action.payload.id);
             return newEntries;
         case types.UPDATE_ENTRY:

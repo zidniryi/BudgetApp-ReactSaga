@@ -1,49 +1,31 @@
 {
   "entries": [
     {
-      "id": 2,
-      "description": "Income Work 222"
-    },
-    {
-      "id": 3,
-      "description": "Income Work 1"
-    },
-    {
-      "id": 4,
-      "description": "Expenese Work"
-    },
-    {
       "id": 111,
       "description": "Income Work"
     },
     {
       "id": 1,
+      "description": "Income Work"
+    },
+    {
+      "id": 2,
       "description": "Income Work"
     }
   ],
   "values": [
     {
-      "id": 2,
-      "value": 1222,
-      "isExpense": false
-    },
-    {
-      "id": 3,
-      "value": 14,
-      "isExpense": false
-    },
-    {
-      "id": 4,
-      "value": 10,
-      "isExpense": true
-    },
-    {
       "id": 111,
       "value": 1222,
       "isExpense": false
     },
     {
       "id": 1,
+      "value": 1222,
+      "isExpense": false
+    },
+    {
+      "id": 2,
       "value": 1222,
       "isExpense": false
     }
