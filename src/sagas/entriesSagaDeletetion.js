@@ -11,7 +11,8 @@ export function* deleteEntrySaga() {
     }
 }
 
-function deleteEntry(id) {
+async function deleteEntry(id) {
     axios.delete(`http://localhost:3011/entries/${id}`)
     axios.delete(`http://localhost:3011/values/${id}`)
+
 }
