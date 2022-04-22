@@ -3,6 +3,14 @@
     {
       "id": 2,
       "description": "Income Work"
+    },
+    {
+      "id": "8a60358c-c6fa-4daf-b927-73388c15723f",
+      "description": "Hello there"
+    },
+    {
+      "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0",
+      "description": "Bf"
     }
   ],
   "values": [
@@ -10,6 +18,16 @@
       "id": 2,
       "value": 1222,
       "isExpense": false
+    },
+    {
+      "id": "8a60358c-c6fa-4daf-b927-73388c15723f",
+      "isExpense": true,
+      "value": "12"
+    },
+    {
+      "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0",
+      "isExpense": false,
+      "value": "121212"
     }
   ]
 }

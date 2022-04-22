@@ -17,8 +17,6 @@ function NewEntryForm() {
         addEntry,
     } = useEntry()
 
-    console.log(value)
-
     return (
         <Form unstackable>
             <EntryForm
