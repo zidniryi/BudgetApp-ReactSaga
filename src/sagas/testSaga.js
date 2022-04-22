@@ -7,6 +7,7 @@ import { call, delay, fork, put, take, takeEvery, cancelled, cancel, takeLatest 
 //  TAKE EVERY is execute when like TAKE but in paralel style
 // CANCEL is to cancel or delete fork
 // CANCELLED is called on the FORK
+// TAKE LAST like start the saga from begin and repeat
 
 function double(number) {
     return number * 2;
@@ -89,7 +90,7 @@ function* infinitySaga() {
         index++
         try {
             console.log("Inside infinity loop", index);
-            yield delay(500);
+            yield delay(1000);
         } catch (err) {
             console.log("See error", err);
         } finally {
@@ -100,33 +101,31 @@ function* infinitySaga() {
 }
 
 export function* testSagaTakeLatest() {
+    yield takeLatest("TEST_MESSAGE_5", infinitySaga);
+}
+
+export function* testSagaCanceled() {
     yield take("TEST_MESSAGE_4");
     const handleCancel = yield fork(infinitySaga);
     yield delay(3000);
     yield cancel(handleCancel);
-
-}
-
-export function* testSagaCanceled() {
-    yield takeLatest("TEST_MESSAGE_5");
 }
 
 export function* dispatchTest() {
     let index = 0;
 
     while (true) {
-        yield delay(1000);
+        yield delay(5000);
         yield put({
-            type: "TEST_MESSAGE_4",
+            type: "TEST_MESSAGE_5",
             payload: index,
         });
+
         // yield put({
         //     type: 'TEST_MESSAGE_3',
         //     payload: index
         // })
         // index++
 
-        // const state = yield take('TEST_MESSAGE_2')
-        // console.log(state)
     }
 }
