@@ -1,42 +1,42 @@
 {
   "entries": [
     {
-      "id": 2,
-      "description": "Income Work"
+      "description": "Income 2",
+      "id": 2
     },
     {
-      "id": "8a60358c-c6fa-4daf-b927-73388c15723f",
-      "description": "Hello there"
+      "description": "Listrik",
+      "id": "8a60358c-c6fa-4daf-b927-73388c15723f"
     },
     {
-      "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0",
-      "description": "Bf"
+      "description": "Income 1",
+      "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0"
     },
     {
-      "id": "f5ddf89b-02ba-4f1f-8eda-9dd840f8a9f4",
-      "description": "Outfit"
+      "description": "Food",
+      "id": "3fd75564-1a73-4e4b-a27e-a4068f8557ce"
     }
   ],
   "values": [
     {
-      "id": 2,
-      "value": 1222,
-      "isExpense": false
-    },
-    {
-      "id": "8a60358c-c6fa-4daf-b927-73388c15723f",
-      "isExpense": true,
-      "value": "12"
-    },
-    {
-      "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0",
       "isExpense": false,
-      "value": "121212"
+      "value": "1200000",
+      "id": 2
     },
     {
-      "id": "f5ddf89b-02ba-4f1f-8eda-9dd840f8a9f4",
       "isExpense": true,
-      "value": "22"
+      "value": "12",
+      "id": "8a60358c-c6fa-4daf-b927-73388c15723f"
+    },
+    {
+      "isExpense": false,
+      "value": "121212",
+      "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0"
+    },
+    {
+      "isExpense": true,
+      "value": "1212",
+      "id": "3fd75564-1a73-4e4b-a27e-a4068f8557ce"
     }
   ]
 }
