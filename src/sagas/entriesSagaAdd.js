@@ -9,6 +9,7 @@ export function* addEntrySaga() {
 function* addEntryToDb({ payload }) {
     yield call(addEntry, payload)
     yield call(addEntryDetail, payload)
+    yield put({ type: types.ADD_ENTRY_RESULT, payload })
 }
 
 

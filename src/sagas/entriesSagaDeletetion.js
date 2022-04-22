@@ -12,7 +12,7 @@ export function* deleteEntrySaga() {
 }
 
 async function deleteEntry(id) {
-    axios.delete(`http://localhost:3011/entries/${id}`)
-    axios.delete(`http://localhost:3011/values/${id}`)
+    await axios.delete(`http://localhost:3011/entries/${id}`)
+    await axios.delete(`http://localhost:3011/values/${id}`)
 
 }

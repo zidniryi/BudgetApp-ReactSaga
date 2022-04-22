@@ -11,6 +11,10 @@
     {
       "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0",
       "description": "Bf"
+    },
+    {
+      "id": "f5ddf89b-02ba-4f1f-8eda-9dd840f8a9f4",
+      "description": "Outfit"
     }
   ],
   "values": [
@@ -28,6 +32,11 @@
       "id": "fa68226b-d354-4e75-a729-1ee15a6dc9c0",
       "isExpense": false,
       "value": "121212"
+    },
+    {
+      "id": "f5ddf89b-02ba-4f1f-8eda-9dd840f8a9f4",
+      "isExpense": true,
+      "value": "22"
     }
   ]
 }
